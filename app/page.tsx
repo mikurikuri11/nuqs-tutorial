@@ -1,7 +1,7 @@
 // Usesを全て取得した上で、検索条件に合致するユーザーを表示するパターン
 
-import { getUsers } from "@/lib/getUsers";
-import { searchParamsCache } from "@/lib/searchParams";
+import { getUsers } from "@/features/users/getUsers";
+import { searchUsersCache } from "@/features/users/searchUsersCache";
 import { User } from "@/types/api";
 import { type SearchParams } from "nuqs/server";
 import Form from "next/form";
@@ -13,7 +13,7 @@ type PageProps = {
 export default async function Page({ searchParams }: PageProps) {
   // ⚠️ Don't forget to call `parse` here.
   // You can access type-safe values from the returned object:
-  const { email: email, city: city } = await searchParamsCache.parse(
+  const { email: email, city: city } = await searchUsersCache.parse(
     searchParams
   );
   const users = await getUsers();

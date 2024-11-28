@@ -5,8 +5,7 @@ import {
 } from "nuqs/server";
 // Note: import from 'nuqs/server' to avoid the "use client" directive
 
-export const searchParamsCache = createSearchParamsCache({
+export const searchPostsCache = createSearchParamsCache({
   // List your search param keys and associated parsers here:
-  email: parseAsString.withDefault(""),
-  city: parseAsString.withDefault(""),
+  id: parseAsString.withDefault(""),
 });
