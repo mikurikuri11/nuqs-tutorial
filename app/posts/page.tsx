@@ -6,6 +6,7 @@ import Form from "next/form";
 import { getPost } from "@/features/posts/getPost";
 import { getPosts } from "@/features/posts/getPosts";
 import { type SearchParams } from "nuqs";
+import { Button } from "@nextui-org/react";
 
 type PageProps = {
   searchParams: Promise<SearchParams>; // Next.js 15+: async searchParams prop
@@ -24,8 +25,7 @@ export default async function Posts({ searchParams }: PageProps) {
       <Form action="/posts" className="flex flex-col gap-3">
         <label>Id</label>
         <input className="p-3 border-2 border-sky-300" name="id" />
-
-        <button className="p-3 bg-sky-500 text-white">Search</button>
+        <Button type="submit" color="primary">Search</Button>
       </Form>
 
       <div>
