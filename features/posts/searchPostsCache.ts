@@ -8,4 +8,7 @@ import {
 export const searchPostsCache = createSearchParamsCache({
   // List your search param keys and associated parsers here:
   id: parseAsString.withDefault(""),
+  animals: parseAsString.withDefault(""),
+  startDate: parseAsString.withDefault(""),
+  endDate: parseAsString.withDefault(""),
 });
